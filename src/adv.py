@@ -92,10 +92,11 @@ def parse_move(player, move):
         elif(action == "attack"):
             monster = room.getMonster(name)
             if(monster):
-                health = monster.on_attack()
-                print(health)
+                health = monster.on_attack(player)
                 if(health <= 0):
                     room.removeMonster(name)
+            return room
+        else:
             return room
     else:
         if(move == "q"):
