@@ -39,3 +39,9 @@ class Player:
         if(self.current_room.is_light or len(room_items) or len(player_items)):
             return True
         return False
+    
+    def hasSword(self):
+        for item in self.inventory:
+            if(item.name == "sword"):
+                return True
+        return False

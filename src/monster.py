@@ -13,9 +13,12 @@ class Monster:
 Health: {self.health}
 """)
 
-    def on_attack(self):
+    def on_attack(self, player):
         is_hit = ["strong", "weak", "miss"]
         hit_is = is_hit[random.randint(0, 2)]
+        if(not player.hasSword()):
+            print("can't fight monsters without a sword")
+            return self.health
         if(hit_is == "strong"):
             playsound('sword_collide.mp3')
             playsound('slashkut.wav')
